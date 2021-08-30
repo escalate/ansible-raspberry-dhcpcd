@@ -4,10 +4,13 @@
     state: present
     update_cache: true
 
-- name: Configure static IP address
-  ansible.builtin.blockinfile:
+- name: Create service configuration
+  ansible.builtin.template:
+    src: dhcpcd.conf.j2
     dest: /etc/dhcpcd.conf
-    block: "{{ dhcpcd_static_ip_configuration }}"
+    owner: root
+    group: root
+    mode: 0644
   notify: Restart dhcpcd service
 
 - name: Start and enable service

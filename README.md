@@ -2,7 +2,7 @@
 
 # Ansible Role: Raspberry - dhcpcd
 
-An Ansible role that manages [dhcpcd](https://roy.marples.name/projects/dhcpcd/) on Raspberry Pi OS (Debian Bullseye).
+An Ansible role that manages [dhcpcd](https://roy.marples.name/projects/dhcpcd/) on Raspberry Pi OS (Debian Bookworm).
 
 ## Install
 

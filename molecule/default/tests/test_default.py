@@ -1,15 +1,17 @@
 """Role testing files using testinfra"""
 
-
 import pytest
 
 
-@pytest.mark.parametrize("config", [
-    ("interface eth0"),
-    ("static ip_address="),
-    ("static routers="),
-    ("static domain_name_servers="),
-])
+@pytest.mark.parametrize(
+    "config",
+    [
+        ("interface eth0"),
+        ("static ip_address="),
+        ("static routers="),
+        ("static domain_name_servers="),
+    ],
+)
 def test_dhcpcd_config(host, config):
     """Check dhcpcd config file"""
     f = host.file("/etc/dhcpcd.conf")
